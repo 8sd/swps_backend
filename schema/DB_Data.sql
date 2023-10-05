@@ -10,9 +10,9 @@ INSERT INTO master.swps.Personen
 VALUES
 	(N'52B9ED76-C45B-4CED-97EA-8DA7FC046465',1,N'Herr',N'Duda',N'Sebastian',N'sebastian.duda@fim-rc.de',N'0C8F3F20-63F3-44E3-A9D4-18D6ED409787'),
 	(N'EBBBF138-9710-43A6-9C7A-5029375104E7',1,N'Herr',N'Guggenberger',N'Tobias',N'tobias.guggenberger@fim-rc.de',N'0C8F3F20-63F3-44E3-A9D4-18D6ED409787'),
-	(N'143B0B85-D4D5-413E-87A4-BB2D7865B399',0,N'Frau',N'Friedrich',N'Franziska',N'franziska.friedrich@fim-rc.de',N'0C8F3F20-63F3-44E3-A9D4-18D6ED409787'),
-	(N'ACBC2F96-71D3-47D5-AF7A-8759DA00DE51',1,N'Frau',N'Völter',N'Fabiane',N'fabiane.voelter@fim-rc.de',N'0C8F3F20-63F3-44E3-A9D4-18D6ED409787'),
-	(N'276670D1-42DA-4EE0-BD8D-DC3717E45CD0',1,N'Herr',N'Meyer-Hollatz',N'Tim',N'tim.meyer-hollatz@fim-rc.de',N'9DE9172B-A4E7-4A1C-9F97-4BC65C8DDE20');
+	(N'143B0B85-D4D5-413E-87A4-BB2D7865B399',0,N'Frau',N'Medhurst',N'Terry',N'atuny0@sohu.com',N'0C8F3F20-63F3-44E3-A9D4-18D6ED409787'),
+	(N'ACBC2F96-71D3-47D5-AF7A-8759DA00DE51',1,N'Frau',N'Röchert',N'Alison',N'jtreleven5@nhs.uk',N'0C8F3F20-63F3-44E3-A9D4-18D6ED409787'),
+	(N'276670D1-42DA-4EE0-BD8D-DC3717E45CD0',1,N'Herr',N'Quigley',N'Sheldon',N'hbingley1@plala.or.jp',N'9DE9172B-A4E7-4A1C-9F97-4BC65C8DDE20');
 
 INSERT INTO master.swps.PersonenExt 
 	(Personen_ID,PIN,Latest_update) 
