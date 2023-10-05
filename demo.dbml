@@ -1,0 +1,49 @@
+Table "dbo"."Standort" {
+  "Standort_ID" uniqueidentifier [not null, primary key]
+  "Name" varchar(100) [not null]
+}
+
+Table "dbo"."Personen" {
+  "Personen_ID" uniqueidentifier [not null, primary key]
+  "Aktiv" bit [not null]
+  "Anrede" varchar(50) [not null]
+  "Name" varchar(100) [not null]
+  "Vorname" varchar(100) [not null]
+  "Mail" varchar(100) [not null]
+  "Standort_ID" uniqueidentifier
+}
+
+Table "dbo"."PersonenExt" {
+  "Personen_ID" uniqueidentifier [not null, primary key]
+  "PIN" varchar(50)
+  "Latest_update" datetime [not null]
+}
+
+Table "dbo"."Produkt" {
+  "Produkt_ID" uniqueidentifier [not null, primary key]
+  "Name" varchar(50) [not null]
+  "Preis" integer [not null]
+  "Standort_ID" uniqueidentifier [not null]
+  "Latest_update" datetime [not null]
+}
+
+Table "dbo"."Transaktion" {
+  "Transaktions_ID" uniqueidentifier [not null, primary key]
+  "Personen_ID" uniqueidentifier [not null]
+  "Produkt_ID" uniqueidentifier [not null]
+  "Anzahl" integer [not null]
+  "Transaktionszeitpunkt" datetime [not null]
+  "Abrechnungszeitpunkt" datetime
+}
+
+
+
+Ref: "dbo"."Personen"."Personen_ID" - "dbo"."PersonenExt"."Personen_ID"
+
+Ref: "dbo"."Personen"."Personen_ID" < "dbo"."Transaktion"."Personen_ID"
+
+Ref: "dbo"."Standort"."Standort_ID" < "dbo"."Personen"."Standort_ID"
+
+Ref: "dbo"."Standort"."Standort_ID" < "dbo"."Produkt"."Standort_ID"
+
+Ref: "dbo"."Produkt"."Produkt_ID" < "dbo"."Transaktion"."Produkt_ID"
