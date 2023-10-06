@@ -9,12 +9,16 @@ services:
     environment:
       SA_PASSWORD: jdgCw4otxMFWQDL5
       ACCEPT_EULA: Y
+    volumes:
+      - mssql:/var/opt/mssql
 
   postgres:
     image: postgres:15
     restart: always
     environment:
       POSTGRES_PASSWORD: postgrespassword
+    volumes:
+      - db_data:/var/lib/postgresql/data
   graphql-engine:
     image: hasura/graphql-engine:v2.33.0
     ports:
@@ -37,3 +41,6 @@ services:
       # HASURA_GRAPHQL_CONSOLE_ASSETS_DIR: /srv/console-assets
       ## uncomment next line to set an admin secret
       # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+volumes:
+  db_data:
+  mssql:
